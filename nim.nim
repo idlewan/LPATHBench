@@ -26,7 +26,7 @@ proc readPlaces: tuple[nodes: seq[Node], num: int] =
 
     return (nodes, numNodes)
 
-proc getLongestPath(nodes: seq[Node], nodeId: int, visited: var seq[bool]): int =
+proc getLongestPath(nodes: openarray[Node], nodeId: int, visited: var openarray[bool]): int =
     visited[nodeId] = true
     for neighbour in nodes[nodeId].neighbours:
         if not visited[neighbour.dest]:
